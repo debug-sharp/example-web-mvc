@@ -1,0 +1,12 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+test text
+
+<form action="@Html.Raw(HttpContext.Current.Request.Path)submit" method="post">
+	<input type="text" name="test_key" value="test value" />
+	<input type="text" name="arr[]" value="test1" />
+	<input type="text" name="arr[]" value="test2" />
+	<input type="submit" name="send" value="Send" />
+</form>
