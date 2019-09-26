@@ -13,7 +13,7 @@ namespace ExampleWebMVC {
 
 			routes.MapRoute(
 				name: "Index",
-				url: "",
+				url: "Index",
 				defaults: new { controller = "Index", action = "Index", something = UrlParameter.Optional },
 				constraints: new {
 					something = @"\d*"
@@ -21,12 +21,12 @@ namespace ExampleWebMVC {
 			);
 			routes.MapRoute(
                 name: "Submit",
-                url: "submit",
+                url: "Index/Submit",
                 defaults: new { controller = "Index", action = "Submit" }
             );
             routes.MapRoute(
                 name: "Done",
-                url: "done",
+                url: "Index/Done",
                 defaults: new { controller = "Index", action = "Done" }
 			);
 
@@ -137,10 +137,17 @@ namespace ExampleWebMVC {
 			routes.MapRoute(
 				name: "contact",
 				url: "contact",
-				defaults: new { controller = "Home", action = "Contact", productId = 0 },
-				constraints: new {
-					productId = @"\d+"
-				}
+				defaults: new { controller = "Home", action = "Contact" }
+			);
+            routes.MapRoute(
+				name: "about",
+				url: "about",
+				defaults: new { controller = "Home", action = "About" }
+			);
+            routes.MapRoute(
+				name: "home",
+				url: "",
+				defaults: new { controller = "Home", action = "Index" }
 			);
 
 			

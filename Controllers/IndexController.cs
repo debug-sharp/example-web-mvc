@@ -8,6 +8,7 @@ namespace ExampleWebMVC.Controllers {
     public class IndexController: Controller {
         public ActionResult Index () {
             
+            Desharp.Debug.Dump(this.Request.Url.AbsoluteUri);
             //this._runSimulatedException();
 
             this.Session["list"] = new List<string>() { "a", "b", "c" };
